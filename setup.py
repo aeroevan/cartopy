@@ -339,6 +339,10 @@ if cython_coverage_enabled:
     extra_cython_args = {'define_macros': [('CYTHON_TRACE_NOGIL', '1')]}
     extra_extension_args.update(extra_cython_args)
 
+if proj_version >= (6, 0, 0):
+    extra_cython_args = {'define_macros': [('ACCEPT_USE_OF_DEPRECATED_PROJ_API_H', '1')]}
+    extra_extension_args.update(extra_cython_args)
+
 
 extensions = [
     Extension(
